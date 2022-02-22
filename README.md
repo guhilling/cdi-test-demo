@@ -13,7 +13,7 @@ See the unit tests for comments.
 
 ## Setup of test
 
-* Uses jdk 17.
+* Uses jdk 11 or 17.
 * Should run "as-is" from maven commandline or IntellIj IDEA.
 
 ## Running the application
