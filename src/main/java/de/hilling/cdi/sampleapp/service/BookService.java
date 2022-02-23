@@ -1,14 +1,14 @@
 package de.hilling.cdi.sampleapp.service;
 
+import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
 
 import java.util.List;
 
 import de.hilling.cdi.sampleapp.jpa.Book;
 
-@Transactional
+@Stateless
 public class BookService {
     @PersistenceContext
     private EntityManager entityManager;
