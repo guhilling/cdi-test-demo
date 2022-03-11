@@ -14,6 +14,13 @@ public class Book {
     private long   id;
     private String title;
 
+    public Book() {
+    }
+
+    public Book(String title) {
+        this.title = title;
+    }
+
     public long getId() {
         return id;
     }
@@ -24,5 +31,10 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return title +" id: " + id + "";
     }
 }

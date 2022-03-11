@@ -5,13 +5,20 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import de.hilling.cdi.sampleapp.jpa.Book;
 
 @Stateless
 public class BookService {
+    private static final Logger LOG = Logger.getLogger(BookService.class.getName());
+
     @PersistenceContext
     private EntityManager entityManager;
+
+    public BookService() {
+        LOG.info("created");
+    }
 
     public List<Book> getAllBooks() {
         return entityManager.createNamedQuery("allBooks", Book.class).getResultList();
