@@ -1,14 +1,12 @@
 package de.hilling.cdi.sampleapp.rest;
 
 import jakarta.inject.Inject;
-import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.PersistenceException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
@@ -27,7 +25,7 @@ import de.hilling.junit.cdi.CdiTestJunitExtension;
  */
 @ExtendWith(CdiTestJunitExtension.class)
 @ExtendWith(MockitoExtension.class)
-class BookResourceMockedServiceTest extends BookBaseTest {
+class BookResourceComponentWithMockTest extends BookBaseTest {
 
     @Inject
     private BookResource bookResource;
@@ -43,15 +41,12 @@ class BookResourceMockedServiceTest extends BookBaseTest {
     void storeBook() {
         bookResource.addBook(firstBook);
         verify(bookService).saveBook(firstBook);
-        verifyNoMoreInteractions(bookService);
     }
 
     @Test
-    void execptionInBackend() {
+    void exceptionInBackend() {
         when(bookService.saveBook(any(Book.class))).thenThrow(new PersistenceException("test error"));
-        PersistenceException expected = assertThrows(PersistenceException.class, () -> {
-            bookResource.addBook(firstBook);
-        });
+        PersistenceException expected = assertThrows(PersistenceException.class, () -> bookResource.addBook(firstBook));
         assertEquals("test error", expected.getMessage());
     }
 

@@ -2,7 +2,7 @@ package de.hilling.cdi.sampleapp.rest;
 
 import jakarta.inject.Inject;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +11,7 @@ import de.hilling.junit.cdi.CdiTestJunitExtension;
 import de.hilling.junit.cdi.microprofile.ConfigPropertyValue;
 
 @ExtendWith(CdiTestJunitExtension.class)
-class ConnectionTestResourceTest {
+class MicroprofileConfigTest {
 
     @Inject
     private ConnectionTestResource connectionTestResource;
