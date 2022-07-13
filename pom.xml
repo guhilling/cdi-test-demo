@@ -57,7 +57,7 @@
         <dependency>
             <groupId>de.hilling.junit.cdi</groupId>
             <artifactId>cdi-test-microprofile</artifactId>
-            <version>4.0.0-RC6</version>
+            <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
