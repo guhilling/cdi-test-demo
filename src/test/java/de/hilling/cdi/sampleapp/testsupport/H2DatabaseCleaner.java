@@ -5,6 +5,9 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import de.hilling.junit.cdi.jee.jpa.DatabaseCleaner;
 
 /**
@@ -18,6 +21,7 @@ import de.hilling.junit.cdi.jee.jpa.DatabaseCleaner;
 @SuppressWarnings("unused")
 public class H2DatabaseCleaner implements DatabaseCleaner {
 
+    private static final Logger LOG = LoggerFactory.getLogger(H2DatabaseCleaner.class);
     public static final String USER_TABLE_IDENTIFIER = "TABLE";
 
     public void run(Connection connection) throws SQLException {
@@ -27,6 +31,7 @@ public class H2DatabaseCleaner implements DatabaseCleaner {
             String tableName = tables.getString("TABLE_NAME");
             if(!tableName.equals("SEQUENCE")) {
                 connection.prepareStatement("delete from " + tableName).execute();
+                LOG.info("cleaned table '{}'", tableName);
             }
         }
         connection.commit();
