@@ -18,6 +18,5 @@ See the unit tests for comments.
 
 ## Running the application
 
-* Download wildfly Jakarta EE Preview.
 * Start default profile.
 * build & deploy.
