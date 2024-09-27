@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <junit.version>5.11.1</junit.version>
+        <cdi-test.version>5.0.2</cdi-test.version>
     </properties>
 
     <dependencies>
@@ -46,19 +47,19 @@
         <dependency>
             <groupId>de.hilling.junit.cdi</groupId>
             <artifactId>cdi-test-core</artifactId>
-            <version>5.0.2</version>
+            <version>${cdi-test.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>de.hilling.junit.cdi</groupId>
             <artifactId>cdi-test-jee</artifactId>
-            <version>4.3.0</version>
+            <version>${cdi-test.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>de.hilling.junit.cdi</groupId>
             <artifactId>cdi-test-microprofile</artifactId>
-            <version>4.3.0</version>
+            <version>${cdi-test.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -78,7 +79,8 @@
             <artifactId>hamcrest</artifactId>
             <version>3.0</version>
             <scope>test</scope>
-        </dependency>        <!-- to test the json-b marshalling -->
+        </dependency>
+        <!-- to test the json-b marshalling -->
         <dependency>
             <groupId>org.eclipse</groupId>
             <artifactId>yasson</artifactId>
@@ -87,9 +89,9 @@
         </dependency>
         <!-- to test jpa we need an implementation -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core-jakarta</artifactId>
-            <version>5.6.15.Final</version>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.6.1.Final</version>
         </dependency>
         <!-- needed for db integration test -->
         <dependency>
