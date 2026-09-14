@@ -80,7 +80,7 @@
             <scope>test</scope>
         </dependency>        <!-- to test the json-b marshalling -->
         <dependency>
-            <groupId>org.eclipse</groupId>
+            <groupId>org.eclipse.yasson</groupId>
             <artifactId>yasson</artifactId>
             <version>3.0.5</version>
             <scope>test</scope>
